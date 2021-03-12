@@ -4,7 +4,12 @@
   "description": "Music Library API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "node scripts/create-database.js",
+    "start": "nodemon -r dotenv/config index.js",
+    "pretest": "node scripts/create-database.js test",
+    "test":  "mocha tests/**/*.js --exit --recursive --timeout 60000 --file  ./tests/test-setup.js",
+    "posttest": "node scripts/drop-database.js"
+    
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/berkebatman/music-library-api/issues"
   },
-  "homepage": "https://github.com/berkebatman/music-library-api#readme"
+  "homepage": "https://github.com/berkebatman/music-library-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.3.1",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  }
 }
