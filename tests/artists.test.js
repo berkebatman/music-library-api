@@ -35,8 +35,8 @@ describe('/artists', () => {
    describe('Post /artists', () => {
       it('creates a new artist in the database', (done) => {
          request(app).post('/artists').send({
-            name: 'Beethoven',
-            genre: 'Moonlight Sonata'
+            name: 'FKJ',
+            genre: 'Skyline'
          }).then(response => {
             expect(response.status).to.equal(201);
             done();
