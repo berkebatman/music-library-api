@@ -26,6 +26,6 @@ app.patch('/albums/:albumId', albumControllers.updateAlbum);
 
 app.delete('/artists/:artistId/albums/:albumId', albumControllers.deleteAlbum);
 
-// songsß
+// songs
 
 app.post("/artists/:artistId/albums/:albumId/songs", songControllers.create);

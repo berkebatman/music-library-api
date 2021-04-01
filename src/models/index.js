@@ -22,10 +22,11 @@ const setupDatabase = () => {
   Song.belongsTo(Album, { as: 'album' })
 
   connection.sync({ alter: true });
+
   return {
     Artist,
     Album,
-    Song, 
+    Song
   };
 };
 
